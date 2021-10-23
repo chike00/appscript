@@ -1,0 +1,7 @@
+Reminder for stupid people
+Stuff inside <> indicates code when it would be otherwise ambiguous
+
+- First create your local directory
+- Then do git init
+- You can't check out (switch) branches with nothing inside of them, so make something.
+- <git config user.name "Chike Nwaenie" --global> if I created the repository, global means this file is stored on my computer BUT outside the repository I made it in. Idk why this matters
