@@ -71,3 +71,5 @@ If you want to pull files online, then you can do <git fetch REMOTE_SERVER> This
 If you want to merge these things into your local repo, you do <git merge remotename> if you want to merge the remote server into your local repo. If you just want to merge a branch in, then you can do git merge branchname.
 
 Here you see the power of fetching, because you fetched all this information but that doesn't merge it. So you get to choose the things you want to incorporate. Like you're picking at food.
+
+It seems that git fetch REMOTENAME and then git fetch BRANCHNAME doesn't always work. So git pull might be the way to go? 
