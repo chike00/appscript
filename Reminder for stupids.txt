@@ -29,3 +29,13 @@ Stuff inside <> indicates code when it would be otherwise ambiguous
 MASTER: commit1, commit2, commit3, commit4
 
 Say, after commit3, I think to myself, "Okay, I want to try some wacky stuff. I'll make commit4 which is stable, reliable, whatever, but using commit3's code, I'm going to BRANCH off somewhere else."
+
+- If I have created a local repo, and this does not exist on the internet, I need to do this:
+
+<
+git remote add origin https://github.com/chike00/appscript.git
+
+git branch -M main ####BE CAREFUL, THIS SNEAKILY RENAMES MY CURRENT BRANCH. SKIP THIS STEP IF YOU LIKE THE NAME YOU ALREADY HAVE
+
+git push -u origin main ####BE CAREFUL. THIS ASSUMES I HAVE A BRANCH CALLED MAIN, IF I HAVE A BRANCH CALLED MASTER, OR POO, USE THAT INSTEAD
+>
