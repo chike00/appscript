@@ -39,3 +39,7 @@ git branch -M main ####BE CAREFUL, THIS SNEAKILY RENAMES MY CURRENT BRANCH. SKIP
 
 git push -u origin main ####BE CAREFUL. THIS ASSUMES I HAVE A BRANCH CALLED MAIN, IF I HAVE A BRANCH CALLED MASTER, OR POO, USE THAT INSTEAD
 >
+
+- If I want to see what origin I have. E.g. what repository on the INTERNET my local repo is connected to, then I do <git remote>
+
+- After I've staged and committed my changes to my local repo (git add, git commit), I push the REPO (not the file) to origin
