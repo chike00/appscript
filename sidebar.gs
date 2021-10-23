@@ -1,7 +1,3 @@
-//have global array and track the difference
-var globalArr = [];
-
-
 /**
  * Function which runs when the document is open.
  * Creates a menu addon on the top ribbon
@@ -35,7 +31,6 @@ function boldAndUnderlined(){
 
   console.log(arr.length);
   arr.forEach((element) => console.log(element));
-  arr.forEach((element) => globalArr.push(element));
 
   if(doc.getBody().getChild(0) == ""){
 
