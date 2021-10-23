@@ -2,6 +2,30 @@ Reminder for stupid people
 Stuff inside <> indicates code when it would be otherwise ambiguous
 
 - First create your local directory
+
 - Then do git init
+
 - You can't check out (switch) branches with nothing inside of them, so make something.
+
 - <git config user.name "Chike Nwaenie" --global> if I created the repository, global means this file is stored on my computer BUT outside the repository I made it in. Idk why this matters
+
+- <git config user.email "chikenwaenie@gmail.com" --global>
+
+- git status tells us the status of the repo
+
+- <git add (file)> adds a change in the working directory to the staging area. It tells Git that you want to include updates to a particular file in the next commit.
+
+- I can do git commit -m "..." which captures a snapshot of the currently staged changes. *Begs the question of whether I can do multiple different commits with different commit messages and these are all different snapshots. Or whether it overrides each snapshot?*
+
+- <git config core.editor notepad> sets my default editor to notepad for commits. So now when I want to commit it opens up notepad
+
+- git branch (name) creates a new branch called (name)
+
+- git checkout (name) allows me to switch to a that branch
+
+- <git branch> by itself allows us to see what branches there are and that we're in
+
+- A branch is a linear path of commits, say:
+MASTER: commit1, commit2, commit3, commit4
+
+Say, after commit3, I think to myself, "Okay, I want to try some wacky stuff. I'll make commit4 which is stable, reliable, whatever, but using commit3's code, I'm going to BRANCH off somewhere else."
