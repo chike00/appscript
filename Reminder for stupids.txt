@@ -44,5 +44,22 @@ git push -u origin main ####BE CAREFUL. THIS ASSUMES I HAVE A BRANCH CALLED MAIN
 
 - After I've staged and committed my changes to my local repo (git add, git commit), I push the REPO (not the file) to origin
 
-- If I want to push an existing repository to the origin server, then I do <git push -u origin main>
+- If I want to push an existing repository to the origin server, then I do <git push -u NAME_OF_ORIGIN_SERVER NAME_OF_LOCAL_BRANCH>
 	- I encountered a problem where git already knew that my repo had an origin server, however, when I switched to a branch which didn't have an upstream, it failed.
+	
+In general, I should do my local stuff using Git Bash. Creating my own repos, branches if need be, etc. Then things like Create a pull request should be done online.
+
+It's early days, but I think I'm understanding this nonsense. Part 1 done.
+
+SUMMARY----------------
+
+Because it's dangerous to conflate ideas, I'm going to refer to an origin server as a remote server
+
+I can:
+From git bash:
+Create a local repo (git init), creating a new branch (git branch NAME_OF_NEW_BRANCH), rename it (git branch -m OLD_NAME NEW_NAME), switch to the new branch (get checkout NAME_OF_BRANCH), stage adds (git add NAME_OF_FILE), stage the committed adds (git commit -m "MESSAGE"), connect to my remote server online (git remote add NAME_OF_REMOTE_SERVER https://link_to_repo), push the repo to the remote for the first time (pushing upstream) (git push -u NAME_OF_REMOTE_SERVER NAME_OF_BRANCH_TO_PUSH), check what the name of remote is (git remote), push commits to the origin server provided I've established that upstream connection (git push), I can create pull requests (by going online - probably I should switch branches first, although I don't think it's necessary), merge pull requests (also online, probably switch the master (or whatever the main repo is called) and do it from there)
+
+I have also learned certain mindsets to approach with. One being to probably open your files from the command shell instead of your file Explorer because you may not know what branch you're in and you might confuse yourself. Also to switch branches to the one you wish to request a merge from when you're creating your pull request. It's probably not necessary but at least you understand the direction and hierarchy you're pushing and pulling from. 
+
+Amen
+-----------
