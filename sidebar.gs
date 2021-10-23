@@ -1,6 +1,11 @@
 //have global array and track the difference
 var globalArr = [];
 
+
+/**
+ * Function which runs when the document is open.
+ * Creates a menu addon on the top ribbon
+ */
 function onOpen(){
   var ui = DocumentApp.getUi();
   ui.createMenu("Add ons - Chike")
@@ -13,6 +18,10 @@ function onOpen(){
   .addToUi();
 }
 
+/**
+ * Function which copies all the lines which are simultaneously
+ * bold and underlined to the top of the document
+ */
 function boldAndUnderlined(){
   var doc = DocumentApp.getActiveDocument();
 
@@ -37,6 +46,9 @@ function boldAndUnderlined(){
   }
 }
 
+/**
+ * Function which turns the highlighted text into subscript.
+ */
 function subscript(){
   var style = {};
   style[DocumentApp.TextAlignment.SUBSCRIPT]
@@ -50,6 +62,9 @@ function subscript(){
   DocumentApp.TextAlignment.SUBSCRIPT);
 }
 
+/**
+ * Function which turns the highlighted text into superscript.
+ */
 function superscript(){
   var style = {};
   style[DocumentApp.TextAlignment.SUBSCRIPT]
