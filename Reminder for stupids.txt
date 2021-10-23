@@ -45,3 +45,4 @@ git push -u origin main ####BE CAREFUL. THIS ASSUMES I HAVE A BRANCH CALLED MAIN
 - After I've staged and committed my changes to my local repo (git add, git commit), I push the REPO (not the file) to origin
 
 - If I want to push an existing repository to the origin server, then I do <git push -u origin main>
+	- I encountered a problem where git already knew that my repo had an origin server, however, when I switched to a branch which didn't have an upstream, it failed.
