@@ -1,3 +1,6 @@
+/**
+ * Creates a forward and backwards traversing file path, I guess.
+ */
 function freedomt(){
   var gp2 = ""
   var word = DocumentApp.getActiveDocument().getSelection().getRangeElements()[0];
