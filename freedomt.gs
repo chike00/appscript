@@ -24,3 +24,18 @@ function freedomt(){
   var newDoc = DocumentApp.openByUrl(url)
   newDoc.getBody().setText(DocumentApp.getActiveDocument().getUrl());
 }
+
+/*
+- Gets the link of the current page
+- Gets the highlighted text on the current page
+- Converts it to a link
+- Creates a new page linked to current page
+- Writes to new page back-linking to current page
+
+The point is to allow some sort of traversal. The newly created file
+serves as a sort of new canvas to explore an idea on a fresh slate, hopefully helping with creativity and clarity by separating a small idea from its larger playground.
+
+Areas for improvement:
+- Backlink directly to highlighted word
+- Make it so that new file is in the same directory as old file
+*/
