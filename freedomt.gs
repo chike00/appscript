@@ -21,11 +21,17 @@ function freedomt(){
   var doc = DocumentApp.create("Freedom Template: " + gp2);
 
   var url = doc.getUrl()
+  var id = doc.getId()
 
   name.setLinkUrl(pO, postOffset, url)
 
   var newDoc = DocumentApp.openByUrl(url)
   newDoc.getBody().setText(DocumentApp.getActiveDocument().getUrl());
+
+  var spreadsheetFile =  DriveApp.getFileById(DocumentApp.getActiveDocument().getId());
+  var folderId = spreadsheetFile.getParents().next()
+
+  DriveApp.getFileById(id).moveTo(folderId) 
 }
 
 /*
@@ -40,5 +46,8 @@ serves as a sort of new canvas to explore an idea on a fresh slate, hopefully he
 
 Areas for improvement:
 - Backlink directly to highlighted word
+>>>>Since I can't make individual words into headers, meaning they don't have their own bespoke links,
+I could pass through the information of where the word was in the text file, or maybe this is doing too much. It's
+not very future proof considering what happens if I get rid of that bit of text.
 - Make it so that new file is in the same directory as old file
 */
