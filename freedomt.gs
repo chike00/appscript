@@ -46,4 +46,6 @@ serves as a sort of new canvas to explore an idea on a fresh slate, hopefully he
 
 Areas for improvement:
 NEWLY CREATED FILE SHOULD BE IN SAME FOLDER = DONE
+
+To take this further, for neatness - the new files should check if a folder called "Freedom Templates" exists and if so, it should move the file there.
 */
