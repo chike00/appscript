@@ -1,7 +1,8 @@
 /**
- * Creates a forward and backwards traversing file path, I guess.
+ * Creates a new file, creating forwards and backwards links to them
  */
 function freedomt(){
+  //gets highlighted word
   var gp2 = ""
   var word = DocumentApp.getActiveDocument().getSelection().getRangeElements()[0];
   var preOffset = word.getStartOffset()
@@ -10,6 +11,7 @@ function freedomt(){
 
   var name = word.getElement().asText()
 
+  //finalises highlighted word
   while(preOffset != postOffset+1){
     var a = word.getElement().asText().getText().charAt(preOffset)
     gp2 += a;
@@ -17,21 +19,16 @@ function freedomt(){
   }
 
   console.log(gp2);
-  
-  var doc = DocumentApp.create("Freedom Template: " + gp2);
-
-  var url = doc.getUrl()
-  var id = doc.getId()
-
-  name.setLinkUrl(pO, postOffset, url)
-
-  var newDoc = DocumentApp.openByUrl(url)
-  newDoc.getBody().setText(DocumentApp.getActiveDocument().getUrl());
 
   var spreadsheetFile =  DriveApp.getFileById(DocumentApp.getActiveDocument().getId());
   var folderId = spreadsheetFile.getParents().next()
 
-  DriveApp.getFileById(id).moveTo(folderId) 
+  var getFile = DriveApp.getFileById("1hsGgBZQkhKd33gd9GU-YXmXbUHO-Jje_0OAR8qIEls8").makeCopy(); //creates copy of template
+  getFile.moveTo(folderId) //moves to current folder
+  .setName("Freedom Template: " + gp2); //renames template
+  name.setLinkUrl(pO, postOffset, getFile.getUrl()); //sets forward link
+  var newDoc = DocumentApp.openByUrl(getFile.getUrl()); //opens template 
+  newDoc.getBody().insertParagraph(0, "" + DocumentApp.getActiveDocument().getUrl()); //sets backwards  link
 }
 
 /*
@@ -48,8 +45,6 @@ Areas for improvement:
 NEWLY CREATED FILE SHOULD BE IN SAME FOLDER = DONE
 
 To take this further, for neatness - the new files should check if a folder called "Freedom Templates" exists and if so, it should move the file there.
-
-Also, even though I've created a new file, it does not have the template that I want yet. So far I need to copy and paste this in.
 
 Is there a way of allowing a file to look at a root file and get updated on the template format?
 E.g. any new file created in this way will sign up to a register to be updated by the original template file, after that any modification to the host file shows up in the new file.
