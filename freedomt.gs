@@ -1,5 +1,15 @@
 /**
- * Creates a new file, creating forwards and backwards links to them
+ * Builds a menu, to allow a new template to be made
+ */
+function onOpen() {
+  DocumentApp.getUi()
+      .createMenu('Freedom Template')
+      .addItem('Create new Template', 'freedomt')
+      .addToUi();
+}
+
+/**
+ * Creates a new templated file, creating forwards and backwards links to them
  */
 function freedomt(){
   //gets highlighted word
@@ -24,7 +34,7 @@ function freedomt(){
   var folderId = docsFile.getParents().next() //gets current folder - MAY BREAK IF FILE BELONGS IN MULTIPLE FOLDERS. IS THAT POSSIBLE?
   var getFile = DriveApp.getFileById("1hsGgBZQkhKd33gd9GU-YXmXbUHO-Jje_0OAR8qIEls8").makeCopy(); //creates copy of template
   getFile.moveTo(folderId) //moves to current folder
-  .setName("Freedom Template: " + highlightedWordstr); //renames template
+    .setName("Freedom Template: " + highlightedWordstr); //renames template
   name.setLinkUrl(pO, postOffset, getFile.getUrl()); //sets forward link
   var newDoc = DocumentApp.openByUrl(getFile.getUrl()); //opens template 
   newDoc.getBody().insertParagraph(0, "" + DocumentApp.getActiveDocument().getUrl()); //sets backwards  link
