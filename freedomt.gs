@@ -20,9 +20,8 @@ function freedomt(){
 
   console.log(gp2);
 
-  var spreadsheetFile =  DriveApp.getFileById(DocumentApp.getActiveDocument().getId());
-  var folderId = spreadsheetFile.getParents().next()
-
+  var spreadsheetFile =  DriveApp.getFileById(DocumentApp.getActiveDocument().getId()); //gets current folder iterator
+  var folderId = spreadsheetFile.getParents().next() //gets current folder - MAY BREAK IF FILE BELONGS IN MULTIPLE FOLDERS. IS THAT POSSIBLE?
   var getFile = DriveApp.getFileById("1hsGgBZQkhKd33gd9GU-YXmXbUHO-Jje_0OAR8qIEls8").makeCopy(); //creates copy of template
   getFile.moveTo(folderId) //moves to current folder
   .setName("Freedom Template: " + gp2); //renames template
