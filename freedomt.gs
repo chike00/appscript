@@ -3,7 +3,7 @@
  */
 function freedomt(){
   //gets highlighted word
-  var gp2 = ""
+  var highlightedWordstr = ""
   var word = DocumentApp.getActiveDocument().getSelection().getRangeElements()[0];
   var preOffset = word.getStartOffset()
   const pO = word.getStartOffset()
@@ -14,17 +14,17 @@ function freedomt(){
   //finalises highlighted word
   while(preOffset != postOffset+1){
     var a = word.getElement().asText().getText().charAt(preOffset)
-    gp2 += a;
+    highlightedWordstr += a;
     preOffset++;
   }
 
-  console.log(gp2);
+  console.log(highlightedWordstr);
 
-  var spreadsheetFile =  DriveApp.getFileById(DocumentApp.getActiveDocument().getId()); //gets current folder iterator
-  var folderId = spreadsheetFile.getParents().next() //gets current folder - MAY BREAK IF FILE BELONGS IN MULTIPLE FOLDERS. IS THAT POSSIBLE?
+  var docsFile =  DriveApp.getFileById(DocumentApp.getActiveDocument().getId()); //gets current folder iterator
+  var folderId = docsFile.getParents().next() //gets current folder - MAY BREAK IF FILE BELONGS IN MULTIPLE FOLDERS. IS THAT POSSIBLE?
   var getFile = DriveApp.getFileById("1hsGgBZQkhKd33gd9GU-YXmXbUHO-Jje_0OAR8qIEls8").makeCopy(); //creates copy of template
   getFile.moveTo(folderId) //moves to current folder
-  .setName("Freedom Template: " + gp2); //renames template
+  .setName("Freedom Template: " + highlightedWordstr); //renames template
   name.setLinkUrl(pO, postOffset, getFile.getUrl()); //sets forward link
   var newDoc = DocumentApp.openByUrl(getFile.getUrl()); //opens template 
   newDoc.getBody().insertParagraph(0, "" + DocumentApp.getActiveDocument().getUrl()); //sets backwards  link
