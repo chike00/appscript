@@ -39,3 +39,9 @@ function freedomt(){
   var newDoc = DocumentApp.openByUrl(getFile.getUrl()); //opens template 
   newDoc.getBody().insertParagraph(0, "" + DocumentApp.getActiveDocument().getUrl()); //sets backwards  link
 }
+
+"""
+When I was installing CloudConvert, it had a slightly different set of permissions to mine. It said it will allow it to: "See, edit, create, and delete only the specific Google Drive files you use with this app"
+
+Whereas mine seemed to give it all the power in the world. How do I get my permissions to do this
+"""
